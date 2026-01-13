@@ -5,29 +5,41 @@ function Home() {
                 <section style={{
                     display: "grid",
                     gridTemplateColumns: "1fr 1fr",
-                    backgroundColor: "#5403eb",
+                    backgroundColor: "#312E81",
                 }}>
                     <article style={{
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
                         justifyContent: "center",
+                        paddingTop: "1rem",
+                        gap: "1rem",
+                        paddingBottom: "1rem",
                         color: "white"
                     }}>
                         <h1 style={{
-                            fontSize:"5vw"
+                            fontSize: "3rem",
                         }}>Seja Bem vindo!</h1>
-                        <p>Expresse aqui seus pensamentos e opiniões</p>
+                        <p style={{
+                            fontSize: "1.25rem"
+                        }}>Expresse aqui seus pensamentos e opiniões</p>
                         <button style={{
-                            border: "1rem",
-                            borderRadius: "5px",
-                            padding: "0.5rem"
+                            backgroundColor: "transparent",
+                            border: "2px solid white",
+                            color: "white",
+                            borderRadius: "0.5rem",
+                            padding: "0.5rem 1rem",
+                            fontWeight: "bold",
+                            cursor: "pointer"
                         }}>Nova postagem
                         </button>
                     </article>
 
-                    <figure>
-                        <img src="https://i.imgur.com/fyfri1v.png" alt="" width={"100%"} />
+                    <figure style={{
+                        display: "flex",
+                        justifyContent: "center"
+                    }}>
+                        <img src="https://i.imgur.com/fyfri1v.png" alt="Imagem Página Home" width={"100%"} />
                     </figure>
                 </section>
             </main>
