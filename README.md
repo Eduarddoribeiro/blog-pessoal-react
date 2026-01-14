@@ -19,9 +19,9 @@ Abaixo, o status do progresso do projeto baseado no cronograma do curso:
 ### 🚀 Fase 1: Configuração e Estrutura Inicial
 - [x] Criação do Projeto com Vite e TypeScript
 - [x] Estrutura de Pastas e Arquivos
-- [x] **Componente Home** (Status Atual)
-- [ ] Instalação e Configuração do **Tailwind CSS**
-- [ ] Componentes de Layout: Navbar e Footer
+- [x] **Componente Home**
+- [x] Instalação e Configuração do **Tailwind CSS**
+- [x] Componentes de Layout: Navbar e Footer
 
 ### 🧭 Fase 2: Navegação e Rotas
 - [ ] Configuração do **React Router Dom**
