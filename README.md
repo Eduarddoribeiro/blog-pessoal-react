@@ -24,12 +24,14 @@ Abaixo, o status do progresso do projeto baseado no cronograma do curso:
 - [x] Componentes de Layout: Navbar e Footer
 
 ### 🧭 Fase 2: Navegação e Rotas
-- [ ] Configuração do **React Router Dom**
-- [ ] Criação das Rotas da Aplicação
+- [x] Configuração do **React Router Dom**
+- [x] Criação das Rotas da Aplicação (`/home`, `/login`, `/cadastro`)
 
 ### 🔐 Fase 3: Autenticação e Contexto
-- [ ] Página de Cadastro de Usuário (Estilização + Lógica)
-- [ ] Página de Login (Estilização + Lógica)
+- [x] Estilização da Página de Cadastro de Usuário
+- [x] Estilização da Página de Login
+- [ ] Lógica de Cadastro e Integração
+- [ ] Lógica de Login e Token
 - [ ] Implementação da **Context API** (AuthContext) para gerenciar o login
 - [ ] Integração com **Axios** para consumo da API
 
