@@ -30,10 +30,11 @@ Abaixo, o status do progresso do projeto baseado no cronograma do curso:
 ### 🔐 Fase 3: Autenticação e Contexto
 - [x] Estilização da Página de Cadastro de Usuário
 - [x] Estilização da Página de Login
-- [ ] Lógica de Cadastro e Integração
-- [ ] Lógica de Login e Token
-- [ ] Implementação da **Context API** (AuthContext) para gerenciar o login
-- [ ] Integração com **Axios** para consumo da API
+- [x] Criação das Interfaces Model (`Usuario`, `Postagem`, `Tema`)
+- [x] Configuração do **Axios** e Scripts de Service
+- [x] Lógica de Cadastro e Integração com o Backend
+- [ ] Lógica de Login e Gerenciamento de Token
+- [ ] Implementação da **Context API** (AuthContext) para estado global
 
 ### 📝 Fase 4: Recursos do Blog (CRUD)
 - [ ] **Temas:**
