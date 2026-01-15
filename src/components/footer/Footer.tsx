@@ -15,9 +15,9 @@ function Footer() {
 
                     <div className="flex gap-2">
 
-                        <LinkedinLogoIcon size={48} weight="bold" className="hover:text-blue-400 cursor-pointer transition-colors" />
-                        <InstagramLogoIcon size={48} weight="bold" className="hover:text-pink-400 cursor-pointer transition-colors" />
-                        <FacebookLogoIcon size={48} weight="bold" className="hover:text-blue-600 cursor-pointer transition-colors" />
+                       <a href="https://www.linkedin.com/in/eduardoribeirodefraga/" target="_blank">
+                       <LinkedinLogoIcon size={48} weight="bold" /></a>
+                        
                     </div>
                 </div>
             </footer>
