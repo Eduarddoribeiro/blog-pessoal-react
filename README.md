@@ -33,8 +33,8 @@ Abaixo, o status do progresso do projeto baseado no cronograma do curso:
 - [x] Criação das Interfaces Model (`Usuario`, `Postagem`, `Tema`)
 - [x] Configuração do **Axios** e Scripts de Service
 - [x] Lógica de Cadastro e Integração com o Backend
-- [ ] Lógica de Login e Gerenciamento de Token
-- [ ] Implementação da **Context API** (AuthContext) para estado global
+- [x] Lógica de Login e Gerenciamento de Token
+- [x] Implementação da **Context API** (AuthContext) para estado global
 
 ### 📝 Fase 4: Recursos do Blog (CRUD)
 - [ ] **Temas:**
