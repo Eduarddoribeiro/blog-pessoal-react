@@ -22,3 +22,5 @@ function DeletarTema() {
         </div>
     )
 }
+
+export default DeletarTema
