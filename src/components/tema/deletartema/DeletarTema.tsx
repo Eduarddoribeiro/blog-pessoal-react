@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { AuthContext } from '../../../contexts/AuthContext'
 import { ClipLoader } from 'react-spinners'
 import { buscar, deletar } from '../../../services/Service'
-import type Tema from '../../../models/Tema'    
+import type Tema from '../../../models/Tema'
 
 
 function DeletarTema() {
@@ -49,7 +49,7 @@ function DeletarTema() {
         setIsLoading(true)
 
         try {
-            await deletar (`/temas/${id}`, {
+            await deletar(`/temas/${id}`, {
                 headers: {
                     'Authorization': token
                 }
@@ -72,7 +72,7 @@ function DeletarTema() {
     function retornar() {
         navigate("/temas")
     }
-    
+
     return (
         <div className="container w-1/3 mx-auto">
 
@@ -86,12 +86,18 @@ function DeletarTema() {
                 <p className='p-8 text-3xl bg-slate-200 h-full'>{tema.descricao}</p>
                 <div className="flex">
                     <button className="w-full text-slate-100 bg-red-400 hover:bg-red-600 py-2"
-                    onClick={retornar}>
+                        onClick={retornar}>
                         Não
                     </button>
-                    <button className="w-full text-slate-100 bg-red-400 hover:bg-red-600 py-2"
-                    onClick={deletarTema}>
-                        Sim
+                    <button
+                        className="w-full text-slate-100 bg-red-400 hover:bg-red-600 py-2 flex items-center justify-center"
+                        onClick={deletarTema}
+                    >
+                        {isLoading ? (
+                            <ClipLoader color="#ffffff" size={24} />
+                        ) : (
+                            <span>Sim</span>
+                        )}
                     </button>
                 </div>
             </div>
