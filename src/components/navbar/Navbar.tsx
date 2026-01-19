@@ -27,7 +27,7 @@ function Navbar() {
                         <Link to='/temas' className='hover:text-blue-800 transition-all'>Temas</Link>
                         <Link to='/cadastrartema' className='hover:text-blue-800 transition-all'>Cadastrar Tema</Link>
                         <Link to='/perfil' className='hover:text-blue-800 transition-all'>Perfil</Link>
-                        <Link to='/login' onClick={logout} className='border-2 border-blue-800 text-blue-800 px-6 py-1.5 rounded-full hover:bg-blue-800 hover:text-white transition-all duration-300 font-bold'>
+                        <Link to='/' onClick={logout} className='border-2 border-blue-800 text-blue-800 px-6 py-1.5 rounded-full hover:bg-blue-800 hover:text-white transition-all duration-300 font-bold'>
                             Sair
                         </Link>
                     </div>
