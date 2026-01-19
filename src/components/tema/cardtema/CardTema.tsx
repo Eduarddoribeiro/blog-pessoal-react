@@ -18,7 +18,7 @@ function CardTema({ tema }: CardTemaProps) {
 
             <div className="flex gap-4 p-4 bg-white border-t border-slate-100">
                 <Link to={`/editartema/${tema.id}`} 
-                    className="w-full text-blue-00 border border-blue-800 hover:bg-blue-100 flex items-center justify-center py-2 rounded-xl transition-all  text-blue-600 font-bold">
+                    className="w-full text-blue-800 border border-blue-800 hover:bg-blue-50 flex items-center justify-center py-2 rounded-xl transition-all font-bold">
                     <button>Editar</button>
                 </Link>
 
