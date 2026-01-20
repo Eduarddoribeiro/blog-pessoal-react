@@ -53,75 +53,83 @@ function FormTema() {
         })
     }
 
-        function
-            retornar() {
-            navigate("/temas")
-        }
-
-        async function gerarNovoTema(e: FormEvent<HTMLFormElement>) {
-            e.preventDefault();
-            setIsLoading(true);
-
-            if (id !== undefined) {
-                try {
-                    await atualizar(`/temas`, tema, setTema, {
-                        headers: {
-                            'Authorization': token
-                        }
-                    })
-                    alert("Tema atualizado com sucesso!");
-                } catch (error: any) {
-                    if (error.toString().includes("401")) {
-                        handleLogout();
-                    } else {
-                        alert("Erro ao atualizar tema!");
-                    }
-                }
-            } else {
-                try {
-                    await cadastrar(`/temas`, tema, setTema, {
-                        headers: { 'Authorization': token }
-                    })
-                    alert("Tema cadastrado com sucesso!");
-                } catch (error: any) {
-                    if (error.toString().includes("401")) {
-                        handleLogout();
-                    } else {
-                        alert("Erro ao cadastrar tema!");
-                    }
-                }
-            }
-
-            setIsLoading(false);
-            retornar();
-        }
-        return (
-            <div className="container flex flex-col items-center justify-center mx-auto">
-                <h1 className="text-4xl text-center my-8">{id === undefined ? "Cadastrar Tema" : "Editar Tema"}</h1>
-
-                <form className="w-1/2 flex flex-col gap-4"
-                    onSubmit={gerarNovoTema}>
-                    <div className="flex flex-col gap-2">
-                        <label htmlFor="descricao">Descrição do Tema</label>
-                        <input type="text"
-                            placeholder="Descreva aqui seu tema"
-                            name="descricao"
-                            className="border-2 border-slate-700 rounded p-2"
-                            value={tema.descricao}
-                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
-                    </div>
-
-                    <button className="rounded text-slate-100 bg-indigo-400 hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center"
-                        type="submit">
-
-                        {isLoading ?
-                            <ClipLoader color="#ffffff" size={24} /> :
-                            <span>{id === undefined ? "Cadastrar" : "Atualizar"}</span>
-                        }</button>
-                </form>
-            </div>
-        )
-
+    function
+        retornar() {
+        navigate("/temas")
     }
 
-    export default FormTema
+    async function gerarNovoTema(e: FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        setIsLoading(true);
+
+        if (id !== undefined) {
+            try {
+                await atualizar(`/temas`, tema, setTema, {
+                    headers: {
+                        'Authorization': token
+                    }
+                })
+                alert("Tema atualizado com sucesso!");
+            } catch (error: any) {
+                if (error.toString().includes("401")) {
+                    handleLogout();
+                } else {
+                    alert("Erro ao atualizar tema!");
+                }
+            }
+        } else {
+            try {
+                await cadastrar(`/temas`, tema, setTema, {
+                    headers: { 'Authorization': token }
+                })
+                alert("Tema cadastrado com sucesso!");
+            } catch (error: any) {
+                if (error.toString().includes("401")) {
+                    handleLogout();
+                } else {
+                    alert("Erro ao cadastrar tema!");
+                }
+            }
+        }
+
+        setIsLoading(false);
+        retornar();
+    }
+    return (
+        <div className="container flex flex-col items-center justify-center mx-auto">
+            <h1 className="text-4xl text-center my-8 text-blue-900 font-extrabold tracking-tight">
+                {id === undefined ? "Cadastrar Tema" : "Editar Tema"}
+            </h1>
+
+            <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovoTema}>
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="descricao" className="text-slate-700 font-semibold text-lg">
+                        Descrição do Tema
+                    </label>
+                    
+                    <input
+                        type="text"
+                        placeholder="Ex: Tecnologia, Vida Pessoal, Back-end..."
+                        name="descricao"
+                        className="border-2 border-slate-200 rounded-xl p-3 focus:border-blue-800 focus:outline-none transition-colors bg-slate-50 focus:bg-white"
+                        value={tema.descricao || ""}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                    />
+                </div>
+
+                <button
+                    className="rounded-xl text-slate-100 bg-blue-800 hover:bg-blue-900 w-1/2 py-3 mx-auto flex justify-center transition-all duration-300 font-bold mt-4 shadow-md hover:shadow-lg"
+                    type="submit"
+                >
+                    {isLoading ?
+                        <ClipLoader color="#ffffff" size={24} /> :
+                        <span>{id === undefined ? "Cadastrar" : "Atualizar"}</span>
+                    }
+                </button>
+            </form>
+        </div>
+    )
+
+}
+
+export default FormTema

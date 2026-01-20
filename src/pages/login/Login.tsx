@@ -3,8 +3,7 @@ import type UsuarioLogin from "../../models/UsuarioLogin";
 import { useState, useContext, useEffect, type ChangeEvent, type FormEvent } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { ClipLoader } from "react-spinners";
-
-
+import imagemLogin from '../../assets/login-img.svg'; 
 
 function Login() {
 
@@ -82,8 +81,13 @@ function Login() {
             </Link>
           </p>
         </form>
-        <div className="bg-[url('https://i.imgur.com/ZZFAmzo.jpg')] lg:block hidden bg-no-repeat w-full min-h-screen bg-cover bg-center">
-        </div>
+        <figure className="w-4/5 mx-auto drop-shadow-lg"> 
+    <img
+        src={imagemLogin} 
+        alt="Ilustração de Login"
+        className="w-full max-w-xl mx-auto drop-shadow-lg"
+    />
+</figure>
       </div>
     </>
   );

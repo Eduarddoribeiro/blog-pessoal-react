@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { cadastrarUsuario } from "../../services/Service";
 import type Usuario from "../../models/Usuario";
 import { ClipLoader } from "react-spinners";
-
+import  imagemCadastro from '../../assets/cadastro-img.svg';
 
 function Cadastro() {
 
@@ -68,7 +68,13 @@ function Cadastro() {
   return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold bg-white">
-        <div className="fundoCadastro bg-[url('https://i.imgur.com/ZZFAmzo.jpg')] lg:block hidden bg-no-repeat w-full min-h-screen bg-cover bg-center"></div>
+        <figure className="w-4/5 mx-auto drop-shadow-lg flex justify-center items-center"> 
+    <img
+        src={imagemCadastro} 
+        alt="Ilustração de Cadastro"
+        className="w-full max-w-xl mx-auto drop-shadow-lg"
+    />
+</figure>
 
         <form className='flex justify-center items-center flex-col w-2/3 gap-3' onSubmit={cadastrarNovoUsuario}>
           <h2 className='text-slate-900 text-5xl font-extrabold tracking-tight mb-4'>
