@@ -1,3 +1,5 @@
+import imagemHome from '../../assets/home-img.svg';
+
 function Home() {
     return (
         <>
@@ -22,7 +24,7 @@ function Home() {
 
                     <figure className="flex justify-center items-center py-8 md:py-0">
                         <img 
-                            src="https://i.imgur.com/fyfri1v.png" 
+                            src={imagemHome} 
                             alt="Imagem Página Home" 
                             className="w-2/3 md:w-3/4 drop-shadow-xl" 
                         />
