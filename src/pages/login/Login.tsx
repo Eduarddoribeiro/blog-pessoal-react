@@ -52,7 +52,7 @@ function Login() {
               type="text"
               id="usuario"
               name="usuario"
-              placeholder="Usuario"
+              placeholder="Digite seu e-mail"
               className="bg-slate-50 border border-slate-200 rounded-lg p-2 focus:ring-2 focus:ring-blue-800 focus:border-transparent outline-none transition-all font-normal"
               value={usuarioLogin.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -66,7 +66,7 @@ function Login() {
                 type={mostrarSenha ? 'text' : 'password'}
                 id="senha"
                 name="senha"
-                placeholder="Senha"
+                placeholder="Digite sua senha"
                 className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2 pr-10 focus:ring-2 focus:ring-blue-800 focus:border-transparent outline-none transition-all font-normal"
                 value={usuarioLogin.senha}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
