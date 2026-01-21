@@ -26,7 +26,7 @@ function CardPostagem({ postagem }: CardPostagemProps) {
                 <h4 className='text-xl font-bold text-blue-900 mb-3 leading-tight'>
                     {postagem.titulo}
                 </h4>
-                <p className="text-slate-700 mb-6 leading-relaxed">
+                <p className="text-slate-700 mb-6 leading-relaxed line-clamp-3 wrap-break-word">
                     {postagem.texto}
                 </p>
 
