@@ -1,4 +1,5 @@
 import imagemHome from '../../assets/home-img.svg';
+import ListaPostagens from '../../components/postagem/listapostagens/ListaPostagens';
 
 function Home() {
     return (
@@ -31,6 +32,8 @@ function Home() {
                     </figure>
                 </section>
             </main>
+
+            <ListaPostagens />
         </>
     );
 }
