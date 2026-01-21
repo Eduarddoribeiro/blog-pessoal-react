@@ -15,7 +15,7 @@ function CardPostagem({ postagem }: CardPostagemProps) {
                     <img
                         src={postagem.usuario?.foto}
                         className='h-12 w-12 rounded-full object-cover border-2 border-white'
-                        alt={postagem.usuario?.nome} 
+                        alt={postagem.usuario?.nome}
                     />
                     <h3 className='text-lg font-bold text-center uppercase text-white'>
                         {postagem.usuario?.nome}
@@ -27,9 +27,9 @@ function CardPostagem({ postagem }: CardPostagemProps) {
                     <div className="flex flex-col gap-1 text-sm text-slate-500">
                         <p><span className="font-bold text-slate-700">Tema:</span>  {postagem.tema?.descricao}</p>
                         <p><span className="font-bold text-slate-700">Data:</span>{new Intl.DateTimeFormat("pt-BR", {
-                        dateStyle: 'full',
-                        timeStyle: 'medium',
-                    }).format(new Date(postagem.data))}</p>
+                            dateStyle: 'full',
+                            timeStyle: 'medium',
+                        }).format(new Date(postagem.data))}</p>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,8 @@ function CardPostagem({ postagem }: CardPostagemProps) {
                 <Link to={`/editarpostagem/${postagem.id}`} className='w-full text-white bg-blue-700 hover:bg-blue-900 flex items-center justify-center py-2 transition-colors duration-300'>
                     <button>Editar</button>
                 </Link>
-                <Link to='' className='text-white bg-red-500 hover:bg-red-700 w-full flex items-center justify-center py-2 transition-colors duration-300'>
+                <Link to={`/deletarpostagem/${postagem.id}`}
+                    className='text-white bg-red-500 hover:bg-red-700 w-full flex items-center justify-center py-2 transition-colors duration-300'>
                     <button>Deletar</button>
                 </Link>
             </div>
