@@ -99,7 +99,7 @@ function Cadastro() {
               type="text"
               id="nome"
               name="nome"
-              placeholder="Nome"
+              placeholder="Seu nome completo"
               className="bg-slate-50 border border-slate-200 rounded-lg p-2 focus:ring-2 focus:ring-blue-800 focus:border-transparent outline-none transition-all font-normal"
               value={usuario.nome}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -112,7 +112,7 @@ function Cadastro() {
               type="text"
               id="usuario"
               name="usuario"
-              placeholder="Usuario"
+              placeholder="seu_email@exemplo.com"
               className="bg-slate-50 border border-slate-200 rounded-lg p-2 focus:ring-2 focus:ring-blue-800 focus:border-transparent outline-none transition-all font-normal"
               value={usuario.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -125,7 +125,7 @@ function Cadastro() {
               type="text"
               id="foto"
               name="foto"
-              placeholder="Foto"
+              placeholder="Link da foto (ex: https://...)"
               className="bg-slate-50 border border-slate-200 rounded-lg p-2 focus:ring-2 focus:ring-blue-800 focus:border-transparent outline-none transition-all font-normal"
               value={usuario.foto}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -139,7 +139,7 @@ function Cadastro() {
                 type={mostrarSenha ? 'text' : 'password'}
                 id="senha"
                 name="senha"
-                placeholder="Senha"
+                placeholder="Crie uma senha (mín. 8 caracteres)"
                 className="bg-slate-50 border border-slate-200 rounded-lg p-2 pr-10 w-full focus:ring-2 focus:ring-blue-800 focus:border-transparent outline-none transition-all font-normal"
                 value={usuario.senha}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -165,7 +165,7 @@ function Cadastro() {
                 type={mostrarConfirmarSenha ? 'text' : 'password'}
                 id="confirmarSenha"
                 name="confirmarSenha"
-                placeholder="Confirmar Senha"
+                placeholder="Repita a senha anterior"
                 className="bg-slate-50 border border-slate-200 rounded-lg p-2 pr-10 w-full focus:ring-2 focus:ring-blue-800 focus:border-transparent outline-none transition-all font-normal"
                 value={confirmarSenha}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
