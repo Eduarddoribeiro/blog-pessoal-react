@@ -3,13 +3,17 @@ import { useNavigate } from "react-router-dom"
 import { cadastrarUsuario } from "../../services/Service";
 import type Usuario from "../../models/Usuario";
 import { ClipLoader } from "react-spinners";
-import  imagemCadastro from '../../assets/cadastro-img.svg';
+import imagemCadastro from '../../assets/cadastro-img.svg';
+import { EyeIcon, EyeSlashIcon } from "@phosphor-icons/react";
 
 function Cadastro() {
 
   const navigate = useNavigate()
 
   const [isLoading, setIsLoading] = useState<boolean>(false)
+
+  const [mostrarSenha, setMostrarSenha] = useState(false)
+  const [mostrarConfirmarSenha, setMostrarConfirmarSenha] = useState(false)
 
   const [confirmarSenha, setConfirmarSenha] = useState<string>("")
 
@@ -28,7 +32,7 @@ function Cadastro() {
   }, [usuario])
 
   function retornar() {
-    navigate('/login')
+    navigate('/')
   }
 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
@@ -40,6 +44,14 @@ function Cadastro() {
 
   function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>) {
     setConfirmarSenha(e.target.value)
+  }
+
+  function toggleSenha() {
+    setMostrarSenha(!mostrarSenha)
+  }
+
+  function toggleConfirmarSenha() {
+    setMostrarConfirmarSenha(!mostrarConfirmarSenha)
   }
 
   async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
@@ -68,13 +80,13 @@ function Cadastro() {
   return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold bg-white">
-        <figure className="w-4/5 mx-auto drop-shadow-lg flex justify-center items-center"> 
-    <img
-        src={imagemCadastro} 
-        alt="Ilustração de Cadastro"
-        className="w-full max-w-xl mx-auto drop-shadow-lg"
-    />
-</figure>
+        <figure className="w-4/5 mx-auto drop-shadow-lg flex justify-center items-center">
+          <img
+            src={imagemCadastro}
+            alt="Ilustração de Cadastro"
+            className="w-full max-w-xl mx-auto drop-shadow-lg"
+          />
+        </figure>
 
         <form className='flex justify-center items-center flex-col w-2/3 gap-3' onSubmit={cadastrarNovoUsuario}>
           <h2 className='text-slate-900 text-5xl font-extrabold tracking-tight mb-4'>
@@ -122,28 +134,54 @@ function Cadastro() {
 
           <div className="flex flex-col w-full">
             <label htmlFor="senha" className="text-slate-700 mb-1">Senha</label>
-            <input
-              type="password"
-              id="senha"
-              name="senha"
-              placeholder="Senha"
-              className="bg-slate-50 border border-slate-200 rounded-lg p-2 focus:ring-2 focus:ring-blue-800 focus:border-transparent outline-none transition-all font-normal"
-              value={usuario.senha}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            />
+            <div className="relative w-full">
+              <input
+                type={mostrarSenha ? 'text' : 'password'}
+                id="senha"
+                name="senha"
+                placeholder="Senha"
+                className="bg-slate-50 border border-slate-200 rounded-lg p-2 pr-10 w-full focus:ring-2 focus:ring-blue-800 focus:border-transparent outline-none transition-all font-normal"
+                value={usuario.senha}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              />
+              <button
+                type="button"
+                onClick={toggleSenha}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-700 hover:text-blue-800 transition-colors cursor-pointer"
+              >
+                {mostrarSenha ? (
+                  <EyeSlashIcon size={20} weight="bold" />
+                ) : (
+                  <EyeIcon size={20} weight="bold" />
+                )}
+              </button>
+            </div>
           </div>
 
           <div className="flex flex-col w-full">
             <label htmlFor="confirmarSenha" className="text-slate-700 mb-1">Confirmar Senha</label>
-            <input
-              type="password"
-              id="confirmarSenha"
-              name="confirmarSenha"
-              placeholder="Confirmar Senha"
-              className="bg-slate-50 border border-slate-200 rounded-lg p-2 focus:ring-2 focus:ring-blue-800 focus:border-transparent outline-none transition-all font-normal"
-              value={confirmarSenha}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
-            />
+            <div className="relative w-full">
+              <input
+                type={mostrarConfirmarSenha ? 'text' : 'password'}
+                id="confirmarSenha"
+                name="confirmarSenha"
+                placeholder="Confirmar Senha"
+                className="bg-slate-50 border border-slate-200 rounded-lg p-2 pr-10 w-full focus:ring-2 focus:ring-blue-800 focus:border-transparent outline-none transition-all font-normal"
+                value={confirmarSenha}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
+              />
+              <button
+                type="button"
+                onClick={toggleConfirmarSenha}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-700 hover:text-blue-800 transition-colors cursor-pointer"
+              >
+                {mostrarConfirmarSenha ? (
+                  <EyeSlashIcon size={20} weight="bold" />
+                ) : (
+                  <EyeIcon size={20} weight="bold" />
+                )}
+              </button>
+            </div>
           </div>
 
           <div className="flex justify-around w-full gap-4 mt-4">
