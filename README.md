@@ -41,10 +41,10 @@ Abaixo, o status do progresso do projeto baseado no cronograma do curso:
   - [x] Listagem de Temas
   - [x] Cadastro de Novos Temas
   - [x] Edição e Exclusão de Temas
-- [ ] **Postagens:**
-  - [ ] Listagem de Postagens
-  - [ ] Criação de Novas Postagens
-  - [ ] Edição e Exclusão de Postagens
+- [x] **Postagens:**
+  - [x] Listagem de Postagens
+  - [x] Criação de Novas Postagens (Modal)
+  - [x] Edição e Exclusão de Postagens
 
 ### 👤 Fase 5: Finalização
 - [ ] Página de Perfil do Usuário
