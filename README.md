@@ -37,10 +37,10 @@ Abaixo, o status do progresso do projeto baseado no cronograma do curso:
 - [x] Implementação da **Context API** (AuthContext) para estado global
 
 ### 📝 Fase 4: Recursos do Blog (CRUD)
-- [ ] **Temas:**
-  - [ ] Listagem de Temas
-  - [ ] Cadastro de Novos Temas
-  - [ ] Edição e Exclusão de Temas
+- [x] **Temas:**
+  - [x] Listagem de Temas
+  - [x] Cadastro de Novos Temas
+  - [x] Edição e Exclusão de Temas
 - [ ] **Postagens:**
   - [ ] Listagem de Postagens
   - [ ] Criação de Novas Postagens
