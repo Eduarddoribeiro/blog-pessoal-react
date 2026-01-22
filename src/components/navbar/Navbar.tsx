@@ -2,6 +2,7 @@ import { useContext, useState, type ReactNode } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import { ListIcon, XIcon } from '@phosphor-icons/react';
+import { ToastAlerta } from '../../utils/ToastAlerta';
 
 function Navbar() {
 
@@ -11,7 +12,7 @@ function Navbar() {
 
     function logout() {
         handleLogout();
-        alert('O usuário foi desconectado com sucesso!');
+        ToastAlerta('O Usuário foi desconectado com sucesso!', 'info')
         navigate('/');
     }
 
