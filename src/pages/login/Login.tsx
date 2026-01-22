@@ -41,7 +41,7 @@ function Login() {
  return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold bg-white relative">
-        <form className="flex justify-center items-center flex-col w-1/2 gap-4" onSubmit={login}>
+        <form className="flex justify-center items-center flex-col w-3/4 lg:w-1/2 gap-4" onSubmit={login}>
           <h2 className="text-slate-900 text-5xl font-extrabold tracking-tight mb-4">
             Entrar
           </h2>
@@ -105,7 +105,7 @@ function Login() {
           </p>
         </form>
 
-        <figure className="w-4/5 mx-auto drop-shadow-lg">
+        <figure className="hidden lg:block w-4/5 mx-auto drop-shadow-lg">
           <img
             src={imagemLogin}
             alt="Ilustração de Login"
