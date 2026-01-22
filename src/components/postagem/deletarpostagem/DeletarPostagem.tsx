@@ -73,41 +73,45 @@ function DeletarPostagem() {
     }
     
     return (
-        <div className='container w-1/3 mx-auto'>
-            <h1 className='text-4xl text-center my-4'>Deletar Postagem</h1>
-
-            <p className='text-center font-semibold mb-4'>
-                Você tem certeza de que deseja apagar a postagem a seguir?
-            </p>
-
-            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-                <header 
-                    className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>
-                    Postagem
-                </header>
-                <div className="p-4">
-                    <p className='text-xl h-full'>{postagem.titulo}</p>
-                    <p>{postagem.texto}</p>
+        <div className='container w-full mx-auto min-h-[80vh] flex flex-col justify-center items-center'>
+            
+            <div className='bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden border border-slate-100'>
+                
+                <div className='bg-slate-50 p-6 border-b border-slate-200 text-center'>
+                    <h1 className='text-2xl font-bold text-blue-900 mb-2'>
+                        Excluir Postagem
+                    </h1>
+                    <p className='text-slate-500 text-sm'>
+                        Tem certeza que deseja apagar esta postagem? Essa ação não pode ser desfeita.
+                    </p>
                 </div>
-                <div className="flex">
-                    <button 
-                        className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2'
-                        onClick={retornar}>
-                        Não
-                    </button>
-                    <button 
-                        className='w-full text-slate-100 bg-indigo-400 
-                        hover:bg-indigo-600 flex items-center justify-center'
-                        onClick={deletarPostagem}>
 
-                        { isLoading ? 
-                            <ClipLoader 
-                                color="#ffffff" 
-                                size={24}
-                            /> : 
-                            <span>Sim</span>
-                        }
+                <div className='p-6 bg-white'>
+                    <div className='bg-slate-50 rounded-lg p-4 border-l-4 border-blue-900 shadow-sm'>
+                        <h2 className='text-lg font-bold text-slate-800 line-clamp-1'>
+                            {postagem.titulo}
+                        </h2>
+                        <p className='text-slate-600 text-sm mt-1 line-clamp-3'>
+                            {postagem.texto}
+                        </p>
+                    </div>
+                </div>
+
+                <div className='flex items-center p-6 pt-0 gap-4'>
+                    <button 
+                        className='flex-1 border border-slate-300 text-slate-700 hover:bg-slate-100 font-semibold py-3 rounded-xl transition-all'
+                        onClick={retornar}>
+                        Cancelar
+                    </button>
+                    
+                    <button 
+                        className='flex-1 bg-red-500 text-white hover:bg-red-600 font-semibold py-3 rounded-xl shadow-md transition-all flex justify-center items-center'
+                        onClick={deletarPostagem}>
                         
+                        {isLoading ? 
+                            <ClipLoader color="#ffffff" size={20} /> 
+                            : 'Sim, Excluir'
+                        }
                     </button>
                 </div>
             </div>
