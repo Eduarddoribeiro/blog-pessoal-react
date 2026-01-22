@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
-import { List, X } from '@phosphor-icons/react';
+import { ListIcon, XIcon } from '@phosphor-icons/react';
 
 function Navbar() {
 
@@ -28,7 +28,7 @@ function Navbar() {
                     </Link>
 
                     <button onClick={toggleMenu} className='md:hidden text-slate-900 focus:outline-none'>
-                        {isOpen ? <X size={32} /> : <List size={32} />}
+                        {isOpen ? <XIcon size={32} /> : <ListIcon size={32} />}
                     </button>
 
                     <div className="hidden md:flex gap-8 items-center font-medium text-slate-600">
