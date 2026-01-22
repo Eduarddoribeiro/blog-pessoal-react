@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, type ReactNode } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import { ListIcon, XIcon } from '@phosphor-icons/react';
@@ -6,7 +6,7 @@ import { ListIcon, XIcon } from '@phosphor-icons/react';
 function Navbar() {
 
     const navigate = useNavigate();
-    const { handleLogout } = useContext(AuthContext);
+    const { usuario, handleLogout } = useContext(AuthContext);
     const [isOpen, setIsOpen] = useState(false);
 
     function logout() {
@@ -19,8 +19,11 @@ function Navbar() {
         setIsOpen(!isOpen)
     }
 
-    return (
-        <>
+
+    let component: ReactNode
+
+    if (usuario.token !== "") {
+        component = (
             <nav className="w-full bg-white/90 backdrop-blur-sm border-b border-slate-100 sticky top-0 z-50">
                 <div className="container flex justify-between items-center px-8 py-4 mx-auto">
                     <Link to='/home' className="text-2xl font-extrabold text-slate-900 tracking-tight">
@@ -49,11 +52,17 @@ function Navbar() {
                             <Link to='/temas' onClick={toggleMenu} className='hover:text-blue-800'>Temas</Link>
                             <Link to='/cadastrartema' onClick={toggleMenu} className='hover:text-blue-800'>Cadastrar Tema</Link>
                             <Link to='/perfil' onClick={toggleMenu} className='hover:text-blue-800'>Perfil</Link>
-                            <Link to='/' onClick={() => { toggleMenu(); logout(); }} className='hover:text-blue-800'>Sair</Link>
+                            <Link to='/' onClick={() => { toggleMenu(); logout(); }} className='hover:text-blue-800 text-red-500'>Sair</Link>
                         </div>
                     </div>
                 )}
             </nav>
+        )
+    }
+
+    return (
+        <>
+            {component}
         </>
     )
 }
