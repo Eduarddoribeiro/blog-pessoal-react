@@ -5,6 +5,7 @@ import type Usuario from "../../models/Usuario";
 import { ClipLoader } from "react-spinners";
 import imagemCadastro from '../../assets/cadastro-img.svg';
 import { EyeIcon, EyeSlashIcon } from "@phosphor-icons/react";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 function Cadastro() {
 
@@ -63,12 +64,12 @@ function Cadastro() {
 
       try {
         await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario)
-        alert('Usuário cadastrado com sucesso!')
+        ToastAlerta('Usuário cadastrado com sucesso!', 'sucesso')
       } catch (error) {
-        alert('Erro ao cadastrar o usuário!')
+        ToastAlerta('Erro ao cadastrar o usuário!', 'erro')
       }
     } else {
-      alert('Dados do usuário inconsistentes! Verifique as informações do cadastro.')
+      ToastAlerta('Dados do usuário inconsistentes! Verifique as informações do cadastro.', 'info')
       setUsuario({ ...usuario, senha: '' })
       setConfirmarSenha('')
     }
